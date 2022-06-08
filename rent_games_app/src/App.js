@@ -9,7 +9,7 @@ import SearchBox from './components/SearchBox';
 const App = () => {
 	const [games, setGames] = useState([]);
 
-  const getMovieRequest = async () => {
+  const getGameRequest = async () => {
     const url = `http://www.omdbapi.com/?s=star wars&apikey=263d22d8`;
 
     const response = await fetch(url);
@@ -21,7 +21,7 @@ const App = () => {
   };
 
   useEffect(() => {
-    getMovieRequest();
+    getGameRequest(searchValue);
   }, []);
 
 	return (
