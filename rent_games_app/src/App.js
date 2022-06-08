@@ -4,6 +4,7 @@ import './App.css';
 import GameList from './components/GameList';
 import GameListHeading from './components/GameListHeading';
 import SearchBox from './components/SearchBox';
+import AddCart from './components/AddToCart';
 
 
 const App = () => {
@@ -32,7 +33,7 @@ const App = () => {
 				<SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
 			</div>
 			<div className='row'>
-        <GameList games={games} />
+        <GameList games={games} cartComponent={AddCart}/>
 			</div>
 		</div>
 	);
