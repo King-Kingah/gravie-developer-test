@@ -8,9 +8,10 @@ import SearchBox from './components/SearchBox';
 
 const App = () => {
 	const [games, setGames] = useState([]);
+  const [searchValue, setSearchValue] = useState('');
 
   const getGameRequest = async () => {
-    const url = `http://www.omdbapi.com/?s=star wars&apikey=263d22d8`;
+    const url = `http://www.giantbomb.com/api/search/?api_key=726ff8f6ddeb814e09e4b8cb2293a694f7415b5a&format=json&query=vice city`;
 
     const response = await fetch(url);
     const responseJson = await response.json();
@@ -22,7 +23,7 @@ const App = () => {
 
   useEffect(() => {
     getGameRequest(searchValue);
-  }, []);
+  }, [searchValue]);
 
 	return (
 		<div className='container-fluid game-app'>
